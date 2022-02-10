@@ -1,0 +1,141 @@
+---
+title: "A Gentle Introduction to the Lambda Calculus"
+description: |
+  An informal introduction to the simplest programming language
+author:
+  - name: Rahul Chhabra
+    url: https://example.com/norajones
+date: 2022-02-10
+output:
+  distill::distill_article:
+    self_contained: false
+draft:true
+---
+# Introduction
+The λ-calculus is the world's simplest programming language. 
+
+The easiest way to "obtain" a simpler version of a language is to remove abstractions :
+- remove objects and classes and namespaces from C++ to get C
+- remove pattern-matching, extension functions and lambdas, whatever the hell `inline <reified T, R>` means and you get Java
+- remove ownership, lifecycles, and traits from Rust and get C++.
+
+In all of these examples, I've ignored syntactic differences, since they are just that : syntactic.
+
+To obtain the λ-calculus however, we go further : we strip objects, types, values, and even numbers.
+We retain one and only one idea : the idea of a function. 
+
+As we shall see, the idea of a function(in the λ-calculus sense) is strong enough to allow us to do practically anything.
+
+## Historical Development
+
+This still does not answer the basic questions one might have:
+
+>Why care about the λ-calculus?
+
+The λ-calculus is a solution to a problem. So it is important to understand the problem it solves.
+
+TODO : Add Historical Development
+
+## Philosophy
+
+TODO : Add philosophical implications
+
+# Syntax
+
+The λ-calculus is unimaginably simple in it's syntax.
+
+Everything is an _expression_. We can then feed "values" (other expressions) to these expressions for an _evaluation_.
+
+Let us consider a few examples.
+
+## The simple functions
+
+The simplest mathematical object in any field is always the identity. The identity matrix, $0$ for addition, $1$ for multiplication. 
+
+Let us start with the identity function:
+
+$$
+    id = {\lambda}x.x
+$$
+
+Here's what this means:
+
+- We use a ${\lambda}$ to denote the definition of a function. 
+- We use $x$ as the name of our formal parameter.
+- We use $.$ to denote the beginning of the "function body"
+- We use $x$ => the body simply returns our parameter that we had named $x$.
+
+
+A natural question comes up : over what _sets_ or _types_ have we defined this function.
+
+The answer is that we haven't.
+
+$x$ is just a symbol. This $id$ function works for _everything_. 
+
+A universal identity function of sorts.
+
+So if we put $x=5$ we get $5$ and if we put $x=f(n)$ where $f(n)$ is some function : we get $f(n)$. 
+
+The λ-calculus is so simple that the concept of type is not yet well-defined. If we wish to define types, we will have to do that too using functions.
+
+## The not-so-simple functions
+
+What about multivariate functions, you ask?
+
+The λ-calculus is so simple that we only have single-parameter functions.
+
+To model multivariate functions, we use a trick.
+
+Let me illustrate.
+
+Consider the function:
+
+$$
+    f(x, y) = x^2 + y^2 
+$$
+
+This is a simple multivariate function.
+
+What happens if we put $y=3$?
+
+We get :
+
+$$
+    f(x, 3) = 9 + x^2
+$$
+
+A single variable function!
+
+So the evaluation of "$n$-variate" function with a single argument yields an "$(n - 1)$-variate" function.
+
+This little trick is known as "currying".
+
+So if we define our function above as :
+
+$$
+    f = {\lambda}x.{\lambda}y.(x^2 + y^2)
+$$
+
+$f$ is a function of one variable ($x$) but it also returns a function of one variable(a function of $y$)!
+
+We also introduce the syntax for actually putting in values to these functions:
+$$
+    (f \hspace{1mm} 3)
+$$
+This yields the function:
+
+$$
+    (f \hspace{1mm} 3) = {\lambda}y.(9 + y^2)
+$$
+
+Let us put $y=4$ in this curried function:
+
+$$
+    ((f \hspace{1mm} 3) \hspace{1mm} 4) = 9 + 16=25
+$$
+
+Function application in the λ-calculus always associates to the left, so we may as well write it more concisely as follows:
+
+$$
+    (f \hspace{1mm} 3 \hspace{1mm} 4) = 25
+$$

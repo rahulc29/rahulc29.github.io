@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-02-10T13:25:34+05:30"
+    },
+    {
+      "path": "index.html",
+      "title": "Qrious",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-02-10T13:25:35+05:30"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

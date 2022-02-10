@@ -1,0 +1,255 @@
+---
+title: "Logarithmic Multiplication : The Russian peasant's method"
+description: |
+  A short description of the post.
+author:
+  - name: Rahul Chhabra
+date: 2022-01-24
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+# Introduction
+
+In this article, we wish to explore multiplication in logarithmic time using only the following operations:
+1. addition
+2. multiplication by 2
+3. division by 2
+
+This is actually an exercise in the [SICP](https://web.mit.edu/6.001/6.037/sicp.pdf). The SICP was the introductory course in computer science at MIT for many years. It has now been discontinued but all the resources are still available online.
+
+The SICP itself has all it's programs in a programming language known as Lisp. Lisp is not particularly popular but if you've ever used a language with any of the following:
+- garbage collection
+- dynamic typing
+- self-hosted compiler
+- higher-order functions
+
+You have Lisp to thank. The fact that SICP expects all it's exercises in Lisp has some profound consequences : in Lisp, there are no `for` or `while` loops. Our primary tool is recursion and tail-call optimisations. There's also no mutation : if `a` is `3` you cannot reset it to any other value. Both of these are now common patterns in functional programming.
+
+In the spirit of SICP, we write the code in this article in Kotlin, since Kotlin allows us to write code in a functional style without much fuss.
+
+## Problem Statement
+
+I was reading the SICP when I came across the problem of implementing multiplication using only addition and bitwise shifts such that the algorithm has exactly $\Theta(log(n))$ time complexity.
+
+The actual problem statement was as follows : 
+
+>The following multiplication procedure (in which it is assumed that our language can only add, not multiply) is analogous to the `expt` procedure:
+```lisp
+(define (* a b)
+    (if (= b 0)
+        0
+        (+ a (* a (- b 1)))))
+```
+>This algorithm takes a number of steps that is linear in `b`. Now suppose we include, together with addition, operations `double`, which doubles an integer, and `halve`, which divides an (even) integer by 2. Using these, design a multiplication procedure analogous to `fast-expt` that uses a logarithmic number of steps.
+
+The Lisp code is better translated to the following Kotlin:
+```kotlin
+fun multiply(a: Int, b: Int) = when (b) {
+    0 -> 0
+    else -> a + multiply(a, b - 1)
+}
+```
+
+Behind the cryptic Lisp syntax, SICP wants us to make the following observations :
+
+1. It is possible to define a linear recursive formulation of multiplication in terms of addition
+2. It is similar enough to exponentiation for us to apply divide-and-conquer and compute it in $\Theta(log(n))$
+
+# Exponentiation as a linear recursive process
+
+Exponentiation may be defined recursively as follows:
+
+$$ a^b = a * a^{b-1} $$
+
+$$ a^0 = 1 $$
+
+This can easily be implemented in code :
+```kotlin
+fun Int.exp(n: Int) = when (n) {
+    0 -> 1
+    else -> this * this.exp(n - 1)
+}
+```
+We can also implement this tail-recursively:
+```kotlin
+tailrec fun Int.expIter(n: Int, answer: Int) = when (n) {
+    0 -> answer
+    else -> this.expIter(n - 1, answer * this)
+}  
+fun Int.exp(n: Int) = this.expIter(n, 1)
+```
+## Another definition of exponentiation
+If we make the observation that 
+
+$$a^b = {(a^{\frac{b}{2}})}^2$$
+
+we can redefine exponentiation as follows:
+
+$$
+    a ^ b = (a ^ {\frac{b}{2}})^2, b = 2k, k \in \mathbb{Z}
+$$
+
+$$
+    a ^ b = a * (a ^ {\frac{b - 1}{2}})^2, b = 2k+1, k \in \mathbb{Z}
+$$
+
+Now we if we write :
+```kotlin
+inline val Int.isEven: Boolean
+    get() = (this % 2 ) == 0
+inline fun Int.square(): Int = this * this
+fun Int.exp(n: Int) = when {
+    n == 0 -> 1
+    n.isEven -> this.exp(n / 2).square()
+    else -> this * this.exp((n - 1) / 2).square()
+}
+```
+Observe that this time exponentiation will terminate in $\Theta(log(n))$ time.
+
+We can again convert this to a tail-recursive formulation:
+```kotlin
+inline val Int.isEven: Boolean
+    get() = (this % 2 ) == 0
+inline fun Int.square(): Int = this * this
+tailrec fun Int.expIter(n: Int, k: Int) = when {
+    n == 1 -> this * k 
+    n.isEven -> this.square().expIter(n / 2, k)
+    else -> this.square().expIter((n - 1) / 2, this * k)
+}
+fun Int.exp(n: Int) = this.expIter(n, 1)
+```
+I highly suggest you try dry-running some of these tail-recursive formulations, they're not intuitive at first-look.
+
+Hopefully we've built enough intuition for exponentiation to extend it to multiplication.
+
+# Multiplication as a linear recursive process
+We may define multiplication as follows:
+
+$$
+    a*b = a + a*(b - 1)
+$$
+
+$$
+    a*0 = 0
+$$
+
+Assuming $+$ is well-defined and $0$ is the identity of $+$.
+
+Let's code it out:
+```kotlin
+fun Int.multiply(b: Int) = when (b) {
+    0 -> 0
+    else -> this + this.multiply(b - 1)
+}
+```
+And also, a tail recursive version, for good measure : 
+```kotlin
+tailrec fun Int.multiplyIter(b: Int, answer: Int) = when (b) {
+    0 -> answer
+    else -> this.multiplyIter(b - 1, answer + this)
+}
+fun Int.multiply(b: Int) = this.multiplyIter(b, 0)
+```
+## Another way to define multiplication
+
+Now, the time has finally come for us to provide a definition for multiplication that will allow us to compute it in logarithmic time!
+
+$$
+    a * b = double(a*halve(b)), b = 2k, k \in \mathbb{Z}
+$$
+
+$$
+    a * b = a + double(a*halve(b - 1)), b = 2k + 1, k \in \mathbb{Z}
+$$
+
+Let's code it out :
+```kotlin
+inline fun Int.doubled() = this * 2
+inline fun Int.halved() = this / 2
+inline val Int.isEven = this % 2 == 0
+fun Int.multiply(b: Int) = when (b) {
+    0 -> 0
+    isEven -> this.multiply(b.halved()).doubled()
+    else -> this + this.multiply((b - 1).halved()).doubled()
+}
+```
+Again, we also present a tail-recursive formulation:
+```kotlin
+tailrec fun Int.multiplyIter(b: Int, answer) = when (b) {
+    0 -> answer
+    isEven -> this.doubled().multiplyIter(b.halved(), answer)
+    else -> this.doubled().multiplyIter((b - 1).halved(), answer + this)
+}
+```
+# Logarithmic Computation of Hyperoperations
+The urge to generalise is very strong.
+
+To motivate this generalisation, let us introduce the notion of the successor function
+
+$$ S(n) = n + 1, \forall n \in \mathbb{N}$$
+
+Now, let us say we compose $S(n)$ with itself $k$ times :
+
+$$ S_k(n) = S(S(S(...S(n))..) 
+          = (((((n + 1) + 1) + 1)..) + 1)
+          = n + k$$
+
+We may think of this as a two argument function $G_{1}(a, b) = a+b$. We call it $G_1$ intentionally to allow us to then write:
+$$
+    G_{1}(a, b) = G_0^{b}(a)
+$$
+where $G_0$ is the successor function and the exponentiation notation is used to denote self-composition $b$ times.
+
+This notion of repeated composition can be extended to form the idea of "hyperoperations".
+
+More formally,
+
+$$
+    G_{n}(a,b) = G_{n - 1}(a, G_n(a, b - 1))
+$$
+
+With the following base cases:
+
+$$
+G_0(a,b) = b+1 
+$$ 
+
+$$
+G_1(a,0) = a 
+$$ 
+
+$$
+G_2(a,0) = 0
+$$ 
+
+$$
+G_n(a,0) = 1, n \geq 3
+$$
+
+Let's confirm that this indeed is a generalisation!
+Consider $n=2$
+
+$$G_2(a, b) = G_1(a, G_2(a, b - 1))$$
+
+But $G_1$ is just addition:
+
+$$G_2(a, b) = a + G_2(a, b - 1)$$
+
+This will expand into $b$ iterations of addition with $a$, that is, $ab$. 
+
+This sequence of functions is known as the _hyperoperations_. 
+
+Now, we can write:
+
+$$
+G_k = G_k(2, G_k(a, \frac{b}{2})), b=2k, k \in \mathbb{Z} 
+$$
+
+$$
+G_k = G_{k-1}(a, G_k(2, G_k(a, \frac{b-1}{2}))), b=2k+1, k \in \mathbb{Z}
+$$
+
+With this definition of hyperoperations, it is possible to compute any hyperoperation in $\Theta(log(n))$ time complexity!
