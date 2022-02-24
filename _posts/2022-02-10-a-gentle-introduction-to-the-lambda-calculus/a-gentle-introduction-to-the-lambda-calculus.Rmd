@@ -9,7 +9,7 @@ date: 2022-02-10
 output:
   distill::distill_article:
     self_contained: false
-draft:true
+draft: true
 ---
 # Introduction
 The λ-calculus is the world's simplest programming language. 

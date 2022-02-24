@@ -1,0 +1,249 @@
+---
+title: "The beauty and applicability of algebraic types"
+description: |
+    In this article we explore the wide applicability of algebraic types and how to use them in daily life
+author:
+  - name: Rahul Chhabra
+    url: https://rahulc29.netlify.app/
+date: 2022-02-24
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true 
+---
+
+# Introduction
+
+The notion of a _type_ is particularly important in programming. 
+A significant portion of online discourse regarding the merits and demerits of a given programming language comes down to if the language's type system:
+
+* Python is _dynamic_ and _strong_ 
+* JavaScript is _dynamic_ and _weak_ (`3 == "3"` but `3 !== "3"`)
+* C is _static_ and _weak_ 
+* C++ and Java are _static_ and _strong_ 
+* Kotlin, Rust and Haskell are _static_ and _very strong_ 
+
+Of all the programming languages aforementioned, only the last three contain a rather powerful means of creating and composing types known as _algebraic types_. 
+It would be unfair to not mention the fact that [Java](https://openjdk.java.net/jeps/409) and [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf) 
+are both proposing to add algebraic types to their type systems. 
+
+# Syntax and elementary notions 
+
+At a very fundamental level, the notion of doing "algebra" with types comes down to the following two operations :
+
+1. **Disjoint Union** : the union of two disjoint types ensures that if we are given any instance of that type, we know it's "parent type"
+2. **Cartesian Product** : the Cartesian Product is of types `A` and `B` is the _tuple_ `(A, B)`
+
+Most programming languages explicitly or implicitly contain the notion of the Cartesian product. 
+
+This is all very abstract, so let's try to make something using only these operations : a linked list! 
+
+## Linked Lists as algebraic types 
+
+Consider the following (singly) linked list :
+```
+1 -> 2 -> 3 -> 4 -> 5
+```
+Observe that any node can be thought of as containing _another_ linked list inside it, as in :
+```
+1 -> (2 -> (3 -> (4 -> 5))
+```
+What about the `5` though? 
+
+Let us play mathematician and _assume_ that the node containing `5` contains the _empty list_ inside it. 
+
+Is this legal?
+
+Well, we make the rules around here! 🤫
+
+So our original list now becomes :
+```
+1 -> (2 -> (3 -> (4 -> (5 -> []))))
+```
+
+where `[]` represents the empty list.
+
+What is the point of doing that however?
+
+We can now make the following claim, _any_ linked list can be either of two things :
+
+1. **Empty** : if the list is empty, it is `[]`
+2. **Node** : a node will have a value (an `int` in this example), and another list, this other list itself follows these same constraints obviously
+
+I'd like to know throw some terminology : the type of `LinkedList` may be defined as the _disjoint union_ of the `EmptyList` type and the `ListNode` type.
+
+Make another observation : the `ListNode` itself is the _Cartesian product_ of `int` and the `LinkedList` type. 
+
+Let us write this down in code, shall we?
+
+```f#
+type LinkedList = Empty | Node of (int * LinkedList)
+```
+
+Let's break this down : a `LinkedList` is either an `Empty` instance, in which case it holds no further information (this definition automatically implies that there is _only_ one empty list) or it is a `Node` consisting of the Cartesian product of `int` and `LinkedList`
+
+Now that we have a linked list, let us try to do things with it!
+
+## Elementary operations on algebraic linked lists 
+
+### List Sizes 
+
+The first problem we will tackle is to compute the length of our linked list. 
+With out algebraic defintion, this is practically a joke:
+
+1. **Empty** : define the size to be `0`
+2. **Node** : define the size to be `1` added to the size of the contained list 
+
+Let us write this down in code :
+```f#
+let rec size list = 
+    match list with 
+    | Empty -> 0 
+    | Node(value, containedList) -> 1 + size(containedList)
+```
+The `match` and `with` is special syntax used for dealing with algebraic types called _pattern matching_. 
+Every language that provides algebraic types also provides some variant of pattern matching. 
+
+As an example, let us take our old example and dry run it.
+
+We have the list :
+```f#
+let a = 1 -> (2 -> (3 -> (4 -> (5 -> []))))
+let b = a.tail // (2 -> (3 -> (4 -> (5 -> []))))
+let c = b.tail // (3 -> (4 -> (5 -> [])))
+let d = c.tail // (4 -> (5 -> []))
+let e = d.tail // (5 -> [])
+let f = e.tail // []
+```
+We have to compute `size(a)`
+
+The execution would look something like this :
+```
+size(a)
+= 1 + size(b)
+= 1 + 1 + size(c)
+= 1 + 1 + 1 + size(d)
+= 1 + 1 + 1 + 1 + size(e)
+= 1 + 1 + 1 + 1 + 1 + size(f)
+= 1 + 1 + 1 + 1 + 1 + 0 
+= 5
+```
+Note that this algorithm takes stack space that is _linear_ with the size of the list.
+
+Here's an alternative implementation :
+
+```f#
+let size list = 
+    // local function
+    let iter list result = 
+        match list with 
+        | Empty -> result 
+        | Node(value, containedList) -> iter(containedList, result + 1)
+    iter(list, 0)
+```
+
+The stack space of this algorithm is constant with the size of the list. 
+
+Here's a challenge for you : can you implement this algorithm in C++ without using recursion but while loops instead? (a close approximation to this can be achieved by using an `enum class` and performing `switch case`)
+
+### Sum and product of an algebraic linked list 
+
+Let us compute the _sum_ of an algebraic linked list. 
+
+I urge you to come up with a solution yourself first!
+
+Here's one way to do it :
+```f#
+let rec sum list = 
+    match list with 
+    | Empty -> 0 
+    | Node(value, containedList) -> value + sum(containedList)
+```
+Beauty lies in the eyes of the beholder, but you need an eye checkup if you don't consider this beautiful!
+
+Very similarly, we can compute the product of a list :
+```f#
+let rec product list = 
+    match list with 
+    | Empty -> 1 // this might not make much sense, but is actually the same thing as saying that the sum of the empty list is 0
+    | Node(value, containedList) -> value * product(containedList)
+```
+
+The two codes are awfully similar, let us generalise :
+
+1. we need an _identity_ to associate with the empty list 
+2. we need an _operation_ to associate the value from the computation to our node's value 
+
+Let us write a general procedure that achieves this :
+```f#
+let rec reduce list operation identity = 
+    match list with 
+    | Empty -> identity 
+    | Node(value, containedList) -> operation(value, containedList)
+```
+
+This is nice and all but a function with three arguments of which two clearly share a semantic relationship is extremely ugly!
+
+How do we fix this?
+
+The Cartesian product!
+
+```f#
+type BinaryOperation =  int * (int -> int -> int)
+```
+
+The `int -> int -> int` syntax is used to denote a function that takes two `int`s and returns an `int`. 
+
+If you are curious about the origin of such a syntax : look up the concept of _currying_, you will probably enjoy it! 
+
+This is still not particularly descriptive : the type does not talk about what the `int` and `int -> int -> int` are _for_. 
+
+To mitigate that, we can give them names :
+```f#
+type BinaryOperation = 
+    { Identity: int,
+      Operation: int -> int -> int }
+```
+This might look like `struct`s from other languages such as C/C++ or Rust. 
+
+It acts very similar to a `struct` and is called a _record_. 
+
+The only place in which records differ from `struct`s is that records can be natively recursive while `struct`s can be _implemented_ recursively using some kind of pointers.
+
+I say "some kind of" because both C++ and Rust allow for very exotic kinds of pointers that would all work; think `std::unique_ptr<T>`, `std::shared_ptr<T>`, `std::weak_ptr<T>`. 
+
+In Rust, one has even more control : for example, with `Box<T>` one can _enforce_ that `T` be on the heap. 
+No such analog exists in C++. 
+
+I digress, let us reimplement our `reduce` function! 
+
+```f#
+let rec reduce list op = 
+    match list with 
+    | Empty -> op.Identity
+    | Node(value, containedList) -> op.Operation(value, reduce(containedList, op))
+let Addition = BinaryOperation {
+    Identity : 0,
+    Operation : fun a b -> (a + b)
+}
+let Multiplication = BinaryOperation {
+    Identity : 1,
+    Operation : fun a b -> (a * b)
+}
+let sum list = reduce(list, Addition)
+let product list = reduce(list, Multiplication)
+```
+
+This is still not `reduce`s final form.
+
+Observe that the stack space grows linearly with list size. 
+
+Here's a mitigation 
+```f#
+let reduce list op = 
+    let rec iter list result = 
+        match list with 
+        | Empty -> result 
+        | Node(value, containedList) -> iter(containedList, op.Operation(value, result))
+    iter(list, op.Identity)
+```
