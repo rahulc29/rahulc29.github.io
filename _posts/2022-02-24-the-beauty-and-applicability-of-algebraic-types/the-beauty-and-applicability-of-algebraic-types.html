@@ -87,635 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Qrious</title>
+  <title>The beauty and applicability of algebraic types</title>
+
+  <meta property="description" itemprop="description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-02-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-02-24"/>
+  <meta name="article:author" content="Rahul Chhabra"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Qrious"/>
+  <meta property="og:title" content="The beauty and applicability of algebraic types"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Qrious"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Qrious"/>
+  <meta property="twitter:title" content="The beauty and applicability of algebraic types"/>
+  <meta property="twitter:description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Qrious"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["The beauty and applicability of algebraic types"]},{"type":"character","attributes":{},"value":["In this article we explore the wide applicability of algebraic types and how to use them in daily life\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Rahul Chhabra"]},{"type":"character","attributes":{},"value":["https://rahulc29.netlify.app/"]}]}]},{"type":"character","attributes":{},"value":["2022-02-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["the-beauty-and-applicability-of-algebraic-types_files/anchor-4.2.2/anchor.min.js","the-beauty-and-applicability-of-algebraic-types_files/bowser-1.9.3/bowser.min.js","the-beauty-and-applicability-of-algebraic-types_files/distill-2.2.21/template.v2.js","the-beauty-and-applicability-of-algebraic-types_files/header-attrs-2.11/header-attrs.js","the-beauty-and-applicability-of-algebraic-types_files/jquery-3.6.0/jquery-3.6.0.js","the-beauty-and-applicability-of-algebraic-types_files/jquery-3.6.0/jquery-3.6.0.min.js","the-beauty-and-applicability-of-algebraic-types_files/jquery-3.6.0/jquery-3.6.0.min.map","the-beauty-and-applicability-of-algebraic-types_files/popper-2.6.0/popper.min.js","the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy-bundle.umd.min.js","the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy-light-border.css","the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy.css","the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy.umd.min.js","the-beauty-and-applicability-of-algebraic-types_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2034,249 +1438,300 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/popper-2.6.0/popper.min.js"></script>
+  <link href="the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="the-beauty-and-applicability-of-algebraic-types_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Qrious","authors":[]}
+{"title":"The beauty and applicability of algebraic types","description":"In this article we explore the wide applicability of algebraic types and how to use them in daily life","authors":[{"author":"Rahul Chhabra","authorURL":"https://rahulc29.netlify.app/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-24T00:00:00.000+05:30","citationText":"Chhabra, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Qrious</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Qrious">Qrious</h1>
-<a href="posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 23, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Rahul Chhabra</div>
-</div>
-</div>
-<div class="thumbnail"></div>
-<div class="description">
-<h2>The beauty and applicability of algebraic types</h2>
-<div class="dt-tags"></div>
-<p>In this article we explore the wide applicability of algebraic types and how to use them in daily life</p>
-</div>
-</a>
-<a href="posts/2022-02-10-a-gentle-introduction-to-the-lambda-calculus/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 10, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Rahul Chhabra</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>A Gentle Introduction to the Lambda Calculus</h2>
-<div class="dt-tags"></div>
-<p>An informal introduction to the simplest programming language</p>
-</div>
-</a>
-<a href="posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 24, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Rahul Chhabra</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Logarithmic Multiplication : The Russian peasant's method</h2>
-<div class="dt-tags"></div>
-<p>A short description of the post.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Qrious</h1>
+<h1>The beauty and applicability of algebraic types</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>In this article we explore the wide applicability of algebraic
+types and how to use them in daily life</p></p>
 </div>
 
+<div class="d-byline">
+  Rahul Chhabra <a href="https://rahulc29.netlify.app/"
+class="uri">https://rahulc29.netlify.app/</a> 
+  
+<br/>2022-02-24
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#syntax-and-elementary-notions">Syntax and elementary
+notions</a>
+<ul>
+<li><a href="#linked-lists-as-algebraic-types">Linked Lists as algebraic
+types</a></li>
+<li><a
+href="#elementary-operations-on-algebraic-linked-lists">Elementary
+operations on algebraic linked lists</a>
+<ul>
+<li><a href="#list-sizes">List Sizes</a></li>
+<li><a href="#sum-and-product-of-an-algebraic-linked-list">Sum and
+product of an algebraic linked list</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>The notion of a <em>type</em> is particularly important in
+programming. A significant portion of online discourse regarding the
+merits and demerits of a given programming language comes down to if the
+language’s type system:</p>
+<ul>
+<li>Python is <em>dynamic</em> and <em>strong</em></li>
+<li>JavaScript is <em>dynamic</em> and <em>weak</em> (<code>3 ==
+"3"</code> but <code>3 !== "3"</code>)</li>
+<li>C is <em>static</em> and <em>weak</em></li>
+<li>C++ and Java are <em>static</em> and <em>strong</em></li>
+<li>Kotlin, Rust and Haskell are <em>static</em> and <em>very
+strong</em></li>
+</ul>
+<p>Of all the programming languages aforementioned, only the last three
+contain a rather powerful means of creating and composing types known as
+<em>algebraic types</em>. It would be unfair to not mention the fact
+that <a href="https://openjdk.java.net/jeps/409">Java</a> and <a
+href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf">C++</a>
+are both proposing to add algebraic types to their type systems.</p>
+<h1 id="syntax-and-elementary-notions">Syntax and elementary
+notions</h1>
+<p>At a very fundamental level, the notion of doing “algebra” with types
+comes down to the following two operations :</p>
+<ol type="1">
+<li><strong>Disjoint Union</strong> : the union of two disjoint types
+ensures that if we are given any instance of that type, we know it’s
+“parent type”</li>
+<li><strong>Cartesian Product</strong> : the Cartesian Product is of
+types <code>A</code> and <code>B</code> is the <em>tuple</em> <code>(A,
+B)</code></li>
+</ol>
+<p>Most programming languages explicitly or implicitly contain the
+notion of the Cartesian product.</p>
+<p>This is all very abstract, so let’s try to make something using only
+these operations : a linked list!</p>
+<h2 id="linked-lists-as-algebraic-types">Linked Lists as algebraic
+types</h2>
+<p>Consider the following (singly) linked list :</p>
+<pre><code>1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5</code></pre>
+<p>Observe that any node can be thought of as containing
+<em>another</em> linked list inside it, as in :</p>
+<pre><code>1 -&gt; (2 -&gt; (3 -&gt; (4 -&gt; 5))</code></pre>
+<p>What about the <code>5</code> though?</p>
+<p>Let us play mathematician and <em>assume</em> that the node
+containing <code>5</code> contains the <em>empty list</em> inside
+it.</p>
+<p>Is this legal?</p>
+<p>Well, we make the rules around here! 🤫</p>
+<p>So our original list now becomes :</p>
+<pre><code>1 -&gt; (2 -&gt; (3 -&gt; (4 -&gt; (5 -&gt; []))))</code></pre>
+<p>where <code>[]</code> represents the empty list.</p>
+<p>What is the point of doing that however?</p>
+<p>We can now make the following claim, <em>any</em> linked list can be
+either of two things :</p>
+<ol type="1">
+<li><strong>Empty</strong> : if the list is empty, it is
+<code>[]</code></li>
+<li><strong>Node</strong> : a node will have a value (an
+<code>int</code> in this example), and another list, this other list
+itself follows these same constraints obviously</li>
+</ol>
+<p>I’d like to know throw some terminology : the type of
+<code>LinkedList</code> may be defined as the <em>disjoint union</em> of
+the <code>EmptyList</code> type and the <code>ListNode</code> type.</p>
+<p>Make another observation : the <code>ListNode</code> itself is the
+<em>Cartesian product</em> of <code>int</code> and the
+<code>LinkedList</code> type.</p>
+<p>Let us write this down in code, shall we?</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> LinkedList = Empty | Node <span class="kw">of</span> <span class="op">(</span><span class="dt">int</span> * LinkedList<span class="op">)</span></span></code></pre></div>
+<p>Let’s break this down : a <code>LinkedList</code> is either an
+<code>Empty</code> instance, in which case it holds no further
+information (this definition automatically implies that there is
+<em>only</em> one empty list) or it is a <code>Node</code> consisting of
+the Cartesian product of <code>int</code> and
+<code>LinkedList</code></p>
+<p>Now that we have a linked list, let us try to do things with it!</p>
+<h2 id="elementary-operations-on-algebraic-linked-lists">Elementary
+operations on algebraic linked lists</h2>
+<h3 id="list-sizes">List Sizes</h3>
+<p>The first problem we will tackle is to compute the length of our
+linked list. With out algebraic defintion, this is practically a
+joke:</p>
+<ol type="1">
+<li><strong>Empty</strong> : define the size to be <code>0</code></li>
+<li><strong>Node</strong> : define the size to be <code>1</code> added
+to the size of the contained list</li>
+</ol>
+<p>Let us write this down in code :</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> size list = </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">0</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; <span class="dv">1</span> + size<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
+<p>The <code>match</code> and <code>with</code> is special syntax used
+for dealing with algebraic types called <em>pattern matching</em>. Every
+language that provides algebraic types also provides some variant of
+pattern matching.</p>
+<p>As an example, let us take our old example and dry run it.</p>
+<p>We have the list :</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> a = <span class="dv">1</span> -&gt; <span class="op">(</span><span class="dv">2</span> -&gt; <span class="op">(</span><span class="dv">3</span> -&gt; <span class="op">(</span><span class="dv">4</span> -&gt; <span class="op">(</span><span class="dv">5</span> -&gt; <span class="op">[]))))</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> b = a.tail //<span class="co"> (2 -&gt; (3 -&gt; (4 -&gt; (5 -&gt; []))))</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> c = b.tail //<span class="co"> (3 -&gt; (4 -&gt; (5 -&gt; [])))</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d = c.tail //<span class="co"> (4 -&gt; (5 -&gt; []))</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> e = d.tail //<span class="co"> (5 -&gt; [])</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f = e.tail //<span class="co"> []</span></span></code></pre></div>
+<p>We have to compute <code>size(a)</code></p>
+<p>The execution would look something like this :</p>
+<pre><code>size(a)
+= 1 + size(b)
+= 1 + 1 + size(c)
+= 1 + 1 + 1 + size(d)
+= 1 + 1 + 1 + 1 + size(e)
+= 1 + 1 + 1 + 1 + 1 + size(f)
+= 1 + 1 + 1 + 1 + 1 + 0 
+= 5</code></pre>
+<p>Note that this algorithm takes stack space that is <em>linear</em>
+with the size of the list.</p>
+<p>Here’s an alternative implementation :</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> size list = </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    //<span class="co"> local function</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> iter list result = </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        | Empty -&gt; result </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; iter<span class="op">(</span>containedList, result + <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    iter<span class="op">(</span>list, <span class="dv">0</span><span class="op">)</span></span></code></pre></div>
+<p>The stack space of this algorithm is constant with the size of the
+list.</p>
+<p>Here’s a challenge for you : can you implement this algorithm in C++
+without using recursion but while loops instead? (a close approximation
+to this can be achieved by using an <code>enum class</code> and
+performing <code>switch case</code>)</p>
+<h3 id="sum-and-product-of-an-algebraic-linked-list">Sum and product of
+an algebraic linked list</h3>
+<p>Let us compute the <em>sum</em> of an algebraic linked list.</p>
+<p>I urge you to come up with a solution yourself first!</p>
+<p>Here’s one way to do it :</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> sum list = </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">0</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; value + sum<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
+<p>Beauty lies in the eyes of the beholder, but you need an eye checkup
+if you don’t consider this beautiful!</p>
+<p>Very similarly, we can compute the product of a list :</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> product list = </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">1</span> //<span class="co"> this might not make much sense, but is actually the same thing as saying that the sum of the empty list is 0</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; value * product<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
+<p>The two codes are awfully similar, let us generalise :</p>
+<ol type="1">
+<li>we need an <em>identity</em> to associate with the empty list</li>
+<li>we need an <em>operation</em> to associate the value from the
+computation to our node’s value</li>
+</ol>
+<p>Let us write a general procedure that achieves this :</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> reduce list operation identity = </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; identity </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; operation<span class="op">(</span>value, containedList<span class="op">)</span></span></code></pre></div>
+<p>This is nice and all but a function with three arguments of which two
+clearly share a semantic relationship is extremely ugly!</p>
+<p>How do we fix this?</p>
+<p>The Cartesian product!</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> BinaryOperation =  <span class="dt">int</span> * <span class="op">(</span><span class="dt">int</span> -&gt; <span class="dt">int</span> -&gt; <span class="dt">int</span><span class="op">)</span></span></code></pre></div>
+<p>The <code>int -&gt; int -&gt; int</code> syntax is used to denote a
+function that takes two <code>int</code>s and returns an
+<code>int</code>.</p>
+<p>If you are curious about the origin of such a syntax : look up the
+concept of <em>currying</em>, you will probably enjoy it!</p>
+<p>This is still not particularly descriptive : the type does not talk
+about what the <code>int</code> and <code>int -&gt; int -&gt; int</code>
+are <em>for</em>.</p>
+<p>To mitigate that, we can give them names :</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> BinaryOperation = </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span> Identity: <span class="dt">int</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      Operation: <span class="dt">int</span> -&gt; <span class="dt">int</span> -&gt; <span class="dt">int</span> <span class="op">}</span></span></code></pre></div>
+<p>This might look like <code>struct</code>s from other languages such
+as C/C++ or Rust.</p>
+<p>It acts very similar to a <code>struct</code> and is called a
+<em>record</em>.</p>
+<p>The only place in which records differ from <code>struct</code>s is
+that records can be natively recursive while <code>struct</code>s can be
+<em>implemented</em> recursively using some kind of pointers.</p>
+<p>I say “some kind of” because both C++ and Rust allow for very exotic
+kinds of pointers that would all work; think
+<code>std::unique_ptr&lt;T&gt;</code>,
+<code>std::shared_ptr&lt;T&gt;</code>,
+<code>std::weak_ptr&lt;T&gt;</code>.</p>
+<p>In Rust, one has even more control : for example, with
+<code>Box&lt;T&gt;</code> one can <em>enforce</em> that <code>T</code>
+be on the heap. No such analog exists in C++.</p>
+<p>I digress, let us reimplement our <code>reduce</code> function!</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> reduce list op = </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; op.Identity</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; op.Operation<span class="op">(</span>value, reduce<span class="op">(</span>containedList, op<span class="op">))</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> Addition = BinaryOperation <span class="op">{</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    Identity : <span class="dv">0</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    Operation : <span class="kw">fun</span> a b -&gt; <span class="op">(</span>a + b<span class="op">)</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> Multiplication = BinaryOperation <span class="op">{</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    Identity : <span class="dv">1</span>,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    Operation : <span class="kw">fun</span> a b -&gt; <span class="op">(</span>a * b<span class="op">)</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> sum list = reduce<span class="op">(</span>list, Addition<span class="op">)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> product list = reduce<span class="op">(</span>list, Multiplication<span class="op">)</span></span></code></pre></div>
+<p>This is still not <code>reduce</code>s final form.</p>
+<p>Observe that the stack space grows linearly with list size.</p>
+<p>Here’s a mitigation</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> reduce list op = </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">rec</span> iter list result = </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">match</span> list <span class="kw">with</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        | Empty -&gt; result </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; iter<span class="op">(</span>containedList, op.Operation<span class="op">(</span>value, result<span class="op">))</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    iter<span class="op">(</span>list, op.Identity<span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

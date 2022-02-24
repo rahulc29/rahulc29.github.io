@@ -8,7 +8,7 @@ author:
 date: 2022-02-24
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: true
     toc: true 
 ---
 
@@ -32,13 +32,13 @@ are both proposing to add algebraic types to their type systems.
 At a very fundamental level, the notion of doing "algebra" with types comes down to the following two operations :
 
 1. **Disjoint Union** : the union of two disjoint types ensures that if we are given any instance of that type, we know it's "parent type"
-2. **Cartesian Product** : the Cartesian Product is of types `A` and `B` is the _tuple_ `(A, B)`
+2. **Cartesian Product** : the Cartesian Product of types `A` and `B` is the _tuple_ `(A, B)`
 
 Most programming languages explicitly or implicitly contain the notion of the Cartesian product. 
 
 This is all very abstract, so let's try to make something using only these operations : a linked list! 
 
-## Linked Lists as algebraic types 
+# Linked Lists as algebraic types 
 
 Consider the following (singly) linked list :
 ```
@@ -76,7 +76,7 @@ Make another observation : the `ListNode` itself is the _Cartesian product_ of `
 
 Let us write this down in code, shall we?
 
-```f#
+```fsharp
 type LinkedList = Empty | Node of (int * LinkedList)
 ```
 
@@ -95,7 +95,7 @@ With out algebraic defintion, this is practically a joke:
 2. **Node** : define the size to be `1` added to the size of the contained list 
 
 Let us write this down in code :
-```f#
+```fsharp
 let rec size list = 
     match list with 
     | Empty -> 0 
@@ -107,7 +107,7 @@ Every language that provides algebraic types also provides some variant of patte
 As an example, let us take our old example and dry run it.
 
 We have the list :
-```f#
+```fsharp
 let a = 1 -> (2 -> (3 -> (4 -> (5 -> []))))
 let b = a.tail // (2 -> (3 -> (4 -> (5 -> []))))
 let c = b.tail // (3 -> (4 -> (5 -> [])))
@@ -132,7 +132,7 @@ Note that this algorithm takes stack space that is _linear_ with the size of the
 
 Here's an alternative implementation :
 
-```f#
+```fsharp
 let size list = 
     // local function
     let iter list result = 
@@ -153,7 +153,7 @@ Let us compute the _sum_ of an algebraic linked list.
 I urge you to come up with a solution yourself first!
 
 Here's one way to do it :
-```f#
+```fsharp
 let rec sum list = 
     match list with 
     | Empty -> 0 
@@ -162,7 +162,7 @@ let rec sum list =
 Beauty lies in the eyes of the beholder, but you need an eye checkup if you don't consider this beautiful!
 
 Very similarly, we can compute the product of a list :
-```f#
+```fsharp
 let rec product list = 
     match list with 
     | Empty -> 1 // this might not make much sense, but is actually the same thing as saying that the sum of the empty list is 0
@@ -175,7 +175,7 @@ The two codes are awfully similar, let us generalise :
 2. we need an _operation_ to associate the value from the computation to our node's value 
 
 Let us write a general procedure that achieves this :
-```f#
+```fsharp
 let rec reduce list operation identity = 
     match list with 
     | Empty -> identity 
@@ -188,7 +188,7 @@ How do we fix this?
 
 The Cartesian product!
 
-```f#
+```fsharp
 type BinaryOperation =  int * (int -> int -> int)
 ```
 
@@ -199,7 +199,7 @@ If you are curious about the origin of such a syntax : look up the concept of _c
 This is still not particularly descriptive : the type does not talk about what the `int` and `int -> int -> int` are _for_. 
 
 To mitigate that, we can give them names :
-```f#
+```fsharp
 type BinaryOperation = 
     { Identity: int,
       Operation: int -> int -> int }
@@ -217,7 +217,7 @@ No such analog exists in C++.
 
 I digress, let us reimplement our `reduce` function! 
 
-```f#
+```fsharp
 let rec reduce list op = 
     match list with 
     | Empty -> op.Identity
@@ -239,7 +239,7 @@ This is still not `reduce`s final form.
 Observe that the stack space grows linearly with list size. 
 
 Here's a mitigation 
-```f#
+```fsharp
 let reduce list op = 
     let rec iter list result = 
         match list with 
@@ -247,3 +247,31 @@ let reduce list op =
         | Node(value, containedList) -> iter(containedList, op.Operation(value, result))
     iter(list, op.Identity)
 ```
+
+I'd like to ask for your patience once again : we do not _need_ the list to be defined only for `int`s. 
+
+Our `reduce` function should also work for, say, string concetation (`""` acts as the identity).
+
+The changes in our type definitions are trivial :
+```fsharp
+type LinkedList<'a> = Empty | Node of ('a * LinkedList<'a>)
+type BinaryOperation<'a> = 
+    { Identity : 'a,
+      Operation : 'a -> 'a -> 'a }
+```
+
+A lot has happened here : let us break it down. 
+
+The `'a` is called a _type parameter_. 
+We can put `'a = int` to re-obtain the list we have been studying till now, `int` is then called a _type argument_.
+
+Essentially, we have generalised our list to accomadate more than one type. 
+
+In the lingo, we say that the type `LinkedList<'a>` is _polymorphic_ over all `'a`, and that `LinkedList<int>` is a _monomorphisation_ for `'a = int`. 
+
+A little bit of trivia : 
+an operation for which an identity, associativity (`a * b * c` is always unambigous) and it is guranteed that `a * b` is always of the same type as `a` and `b` is called a _monoidal_ operation. 
+
+
+# Binary Search Trees as algebraic types 
+
