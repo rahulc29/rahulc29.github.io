@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Qrious</title>
+    <link>https://rahulc29.github.io/</link>
+    <atom:link href="https://rahulc29.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Qrious
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 24 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>The beauty and applicability of algebraic types</title>
+      <dc:creator>Rahul Chhabra</dc:creator>
+      <link>https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types</link>
+      <description>In this article we explore the wide applicability of algebraic types and how to use them in daily life</description>
+      <guid>https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types</guid>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Logarithmic Multiplication : The Russian peasant's method</title>
+      <dc:creator>Rahul Chhabra</dc:creator>
+      <link>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method</link>
+      <description>A short description of the post.</description>
+      <guid>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method</guid>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

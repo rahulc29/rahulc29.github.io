@@ -17,23 +17,6 @@
     "input_file": {}
   },
   {
-    "path": "posts/2022-02-10-a-gentle-introduction-to-the-lambda-calculus/",
-    "title": "A Gentle Introduction to the Lambda Calculus",
-    "description": "An informal introduction to the simplest programming language",
-    "author": [
-      {
-        "name": "Rahul Chhabra",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2022-02-10",
-    "categories": [],
-    "contents": "\nIntroduction\nThe λ-calculus is the world’s simplest programming language.\nThe easiest way to “obtain” a simpler version of a language is to\nremove abstractions : - remove objects and classes and namespaces from\nC++ to get C - remove pattern-matching, extension functions and lambdas,\nwhatever the hell inline <reified T, R> means and you\nget Java - remove ownership, lifecycles, and traits from Rust and get\nC++.\nIn all of these examples, I’ve ignored syntactic differences, since\nthey are just that : syntactic.\nTo obtain the λ-calculus however, we go further : we strip objects,\ntypes, values, and even numbers. We retain one and only one idea : the\nidea of a function.\nAs we shall see, the idea of a function(in the λ-calculus sense) is\nstrong enough to allow us to do practically anything.\nHistorical Development\nThis still does not answer the basic questions one might have:\n\nWhy care about the λ-calculus?\n\nThe λ-calculus is a solution to a problem. So it is important to\nunderstand the problem it solves.\nTODO : Add Historical Development\nPhilosophy\nTODO : Add philosophical implications\nSyntax\nThe λ-calculus is unimaginably simple in it’s syntax.\nEverything is an expression. We can then feed “values”\n(other expressions) to these expressions for an evaluation.\nLet us consider a few examples.\nThe simple functions\nThe simplest mathematical object in any field is always the identity.\nThe identity matrix, \\(0\\) for\naddition, \\(1\\) for multiplication.\nLet us start with the identity function:\n\\[\n    id = {\\lambda}x.x\n\\]\nHere’s what this means:\nWe use a \\({\\lambda}\\) to denote\nthe definition of a function.\nWe use \\(x\\) as the name of our\nformal parameter.\nWe use \\(.\\) to denote the\nbeginning of the “function body”\nWe use \\(x\\) => the body simply\nreturns our parameter that we had named \\(x\\).\nA natural question comes up : over what sets or\ntypes have we defined this function.\nThe answer is that we haven’t.\n\\(x\\) is just a symbol. This \\(id\\) function works for\neverything.\nA universal identity function of sorts.\nSo if we put \\(x=5\\) we get \\(5\\) and if we put \\(x=f(n)\\) where \\(f(n)\\) is some function : we get \\(f(n)\\).\nThe λ-calculus is so simple that the concept of type is not yet\nwell-defined. If we wish to define types, we will have to do that too\nusing functions.\nThe not-so-simple functions\nWhat about multivariate functions, you ask?\nThe λ-calculus is so simple that we only have single-parameter\nfunctions.\nTo model multivariate functions, we use a trick.\nLet me illustrate.\nConsider the function:\n\\[\n    f(x, y) = x^2 + y^2\n\\]\nThis is a simple multivariate function.\nWhat happens if we put \\(y=3\\)?\nWe get :\n\\[\n    f(x, 3) = 9 + x^2\n\\]\nA single variable function!\nSo the evaluation of “\\(n\\)-variate”\nfunction with a single argument yields an “\\((n - 1)\\)-variate” function.\nThis little trick is known as “currying”.\nSo if we define our function above as :\n\\[\n    f = {\\lambda}x.{\\lambda}y.(x^2 + y^2)\n\\]\n\\(f\\) is a function of one variable\n(\\(x\\)) but it also returns a function\nof one variable(a function of \\(y\\))!\nWe also introduce the syntax for actually putting in values to these\nfunctions: \\[\n    (f \\hspace{1mm} 3)\n\\] This yields the function:\n\\[\n    (f \\hspace{1mm} 3) = {\\lambda}y.(9 + y^2)\n\\]\nLet us put \\(y=4\\) in this curried\nfunction:\n\\[\n    ((f \\hspace{1mm} 3) \\hspace{1mm} 4) = 9 + 16=25\n\\]\nFunction application in the λ-calculus always associates to the left,\nso we may as well write it more concisely as follows:\n\\[\n    (f \\hspace{1mm} 3 \\hspace{1mm} 4) = 25\n\\]\n\n\n\n",
-    "preview": {},
-    "last_modified": "2022-02-10T13:26:59+05:30",
-    "input_file": {}
-  },
-  {
     "path": "posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method/",
     "title": "Logarithmic Multiplication : The Russian peasant's method",
     "description": "A short description of the post.",
