@@ -6,14 +6,14 @@
       "description": "This is my personal blog where I write about anything that interests me!",
       "author": [],
       "contents": "\nHi there 👋\n\nAbout me ✨\nI’m Rahul Chhabra (He/Him) , a citizen of Geekland and a student of Information Technology at Indian Institute of Information Technology, Allahabad, batch of 2025.\nI’m most comfortable in C++ and Kotlin, followed by Rust.\nCurrently Working On 🔭\nNesys\nNesys is an NES emulator I’m writing in Rust. It is a development exercise. It forces me to write better and more idiomatic Rust (the codebase will likely be much larger than anything I’ve dealt with). It’s fun : the 6502 is a fun CPU to study and emulate. It’ll be a long project but I’m also planning to port it to WebAssembly and therefore run in the ✨ browser ✨.\nCurrently Learning 🌱\nSICP and Scheme\nSICP stands for the “Structure and Interpretation of Computer Programs” and it’s bloody ridiculously good. It is essentially a course in what I’d like to call “the essence of computation”. There’s no way to completely describe what it is - you’ll just have to read the text yourself, or watch the lectures (available on MIT OCW).\nCategory Theory\nCategory Theory is a branch of mathematics and computer science that allows us to mathematically model practically any program. This allows us to write unimaginably robust and extensible code. I’m reading Category Theory for Programmers and recemmend it to anybody who wishes to dive into the absolute depths of abstraction. Besides, it’s good for the mathematical muscles! 😉\nDSA and Competitive Programming\nI’m currently working very hard to get better at DSA-based problems. I’m currently super into trees and graphs and have been solving a lot of problems related to them. To follow my CP progress, do checkout my CP Repository\nMy Stats\n\nContact Me 📫\n📧 Personal Mail\n📧 College Mail\n LinkedIn\n\n\n\n",
-      "last_modified": "2022-03-23T18:58:59+00:00"
+      "last_modified": "2022-03-23T19:09:50+00:00"
     },
     {
       "path": "index.html",
       "title": "Qrious",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-03-23T18:59:00+00:00"
+      "last_modified": "2022-03-23T19:09:52+00:00"
     }
   ],
   "collections": ["posts/posts.json"]

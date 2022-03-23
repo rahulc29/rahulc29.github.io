@@ -2,26 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://rahulc29.github.io/about.html</loc>
-    <lastmod>2022-03-23T18:53:01+00:00</lastmod>
+    <lastmod>2022-03-23T19:03:37+00:00</lastmod>
   </url>
   <url>
     <loc>https://rahulc29.github.io/</loc>
-    <lastmod>2022-03-23T18:53:01+00:00</lastmod>
+    <lastmod>2022-03-23T19:03:37+00:00</lastmod>
   </url>
   <url>
     <loc>https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/</loc>
-<<<<<<< HEAD
-    <lastmod>2022-03-24T00:27:01+05:30</lastmod>
+    <lastmod>2022-03-23T19:03:37+00:00</lastmod>
   </url>
   <url>
     <loc>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method/</loc>
-    <lastmod>2022-03-24T00:31:47+05:30</lastmod>
-=======
-    <lastmod>2022-03-23T18:53:01+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method/</loc>
-    <lastmod>2022-03-23T18:53:01+00:00</lastmod>
->>>>>>> 682c8b88bfe5cef38f94b377376e35acf7fbc1c0
+    <lastmod>2022-03-23T19:03:37+00:00</lastmod>
   </url>
 </urlset>
