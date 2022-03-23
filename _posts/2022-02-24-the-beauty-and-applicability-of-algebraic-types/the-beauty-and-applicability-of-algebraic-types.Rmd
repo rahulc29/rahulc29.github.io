@@ -168,7 +168,9 @@ Very similarly, we can compute the product of a list :
 ```fsharp
 let rec product list = 
     match list with 
-    | Empty -> 1 // this might not make much sense, but is actually the same thing as saying that the sum of the empty list is 0
+    | Empty -> 1 
+    (* this might not make much sense; 
+    but is actually the same thing as saying that the sum of the empty list is 0 *)
     | Node(value, containedList) -> value * product(containedList)
 ```
 

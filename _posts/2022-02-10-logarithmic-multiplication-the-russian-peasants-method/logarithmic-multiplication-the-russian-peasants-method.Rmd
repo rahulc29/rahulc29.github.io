@@ -1,7 +1,10 @@
 ---
 title: "Logarithmic Multiplication : The Russian peasant's method"
+categories:
+    - computer science 
+    - mathematics
 description: |
-  A short description of the post.
+  In this article we explore the Russian peasant's method to compute the multiplication of two numbers and generalise it to hyperoperations.
 author:
   - name: Rahul Chhabra
 date: 2022-01-24

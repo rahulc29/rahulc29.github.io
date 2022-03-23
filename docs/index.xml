@@ -13,6 +13,8 @@
       <dc:creator>Rahul Chhabra</dc:creator>
       <link>https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types</link>
       <description>In this article we explore the wide applicability of algebraic types and how to use them in daily life</description>
+      <category>computer science</category>
+      <category>mathematics</category>
       <guid>https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types</guid>
       <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
     </item>
@@ -20,9 +22,11 @@
       <title>Logarithmic Multiplication : The Russian peasant's method</title>
       <dc:creator>Rahul Chhabra</dc:creator>
       <link>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method</link>
-      <description>A short description of the post.</description>
+      <description>In this article we explore the Russian peasant's method to compute the multiplication of two numbers and generalise it to hyperoperations.</description>
+      <category>computer science</category>
+      <category>mathematics</category>
       <guid>https://rahulc29.github.io/posts/2022-02-10-logarithmic-multiplication-the-russian-peasants-method</guid>
-      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

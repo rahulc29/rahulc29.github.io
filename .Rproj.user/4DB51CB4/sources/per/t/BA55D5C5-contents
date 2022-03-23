@@ -2,7 +2,7 @@ name: "personal-blog"
 title: "Qrious"
 description: |
   Qrious
-output_dir: "_site"
+output_dir: "docs"
 navbar:
   right:
     - text: "Home"
@@ -10,3 +10,11 @@ navbar:
     - text: "About"
       href: about.html
 output: distill::distill_article
+base_url: https://rahulc29.github.io/
+repository_url: https://github.com/rahulc29/rahulc29.github.io/
+theme: theme.css
+collections:
+  posts:
+    categories: true 
+    categories_metadata: true 
+    authors_metadata: true
