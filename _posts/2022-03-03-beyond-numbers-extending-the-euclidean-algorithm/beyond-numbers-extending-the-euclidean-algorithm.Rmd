@@ -1,0 +1,33 @@
+---
+title: "Beyond numbers : extending the Euclidean algorithm"
+description: |
+    The notion of gcd is one that makes sense for a lot more than just numbers! 
+    In this article we explore how.
+author:
+  - name: Rahul Chhabra
+    url: https://rahulc29.netlify.app/
+date: 2022-03-03
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+# Introduction
+Let us take a look at the function signature of `std::gcd` defined in the C++ STL : 
+
+```c++
+template<class M, class N>
+constexpr std::common_type_t<M, N> gcd(M m, N n);
+```
+There's a lot going on here so let's break it down :
+
+- `template<class M, class N>` means that we have a function _polymorphic_ over types `M` and `N`. 
+- `std::common_type_t<M, N>` computes the unique type that any instance of both `M` and `N` can be implicity converted to 
+- `constexpr` simply means that if the function is fed an expression that is "totally computable at compile-time" then the compiler will compute it. [^1]
+
+[^1]: The last point deserves more elaboration. Let us put `M = N = int` for the sake of discussion. Now, both `m` and `n` should be instances of type `int`.  However, if we put `m = 3 + 4 * 2` and `n = 69` the compiler can compute the `gcd` at compile-time itself and directly encode the value into the final object file. The usage of `constexpr` enables this functionality. Also, since any composition of `constexpr` functions is itself a `constexpr`, many complicated computations can actually be performed at compile-time.  Before `constexpr` the classic method to do this was to define a macro as such :
+```c++
+#define SQUARE(x) x * x
+```
+This is now considered bad practice. 
+
