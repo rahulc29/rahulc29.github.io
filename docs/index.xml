@@ -7,7 +7,15 @@
     <description>Qrious
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 24 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Using fixedpoint combinators to implement recursion</title>
+      <dc:creator>Rahul Chhabra</dc:creator>
+      <link>https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion</link>
+      <description>Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn't actually implement recursion.</description>
+      <guid>https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion</guid>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The beauty and applicability of algebraic types</title>
       <dc:creator>Rahul Chhabra</dc:creator>

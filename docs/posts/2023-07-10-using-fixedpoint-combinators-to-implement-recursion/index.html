@@ -9,11 +9,11 @@
   <meta name="generator" content="distill" />
 
   <style type="text/css">
-  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
-  body {
-    visibility: hidden;
-  }
-  </style>
+
+body {
+visibility: hidden;
+}
+</style>
 
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
@@ -35,94 +35,95 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ad0000; } /* Alert */
-code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #ad0000; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
-code span.ch { color: #20794d; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #5e5e5e; } /* Comment */
-code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #ad0000; } /* DataType */
-code span.dv { color: #ad0000; } /* DecVal */
-code span.er { color: #ad0000; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #ad0000; } /* Float */
-code span.fu { color: #4758ab; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
-code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
-code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
-code span.ss { color: #20794d; } /* SpecialString */
-code span.st { color: #20794d; } /* String */
-code span.va { color: #111111; } /* Variable */
-code span.vs { color: #20794d; } /* VerbatimString */
-code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+code span { color: #00769e; } 
+code span.al { color: #ad0000; } 
+code span.an { color: #5e5e5e; } 
+code span.at { color: #657422; } 
+code span.bn { color: #ad0000; } 
+code span.bu { } 
+code span.cf { color: #00769e; } 
+code span.ch { color: #20794d; } 
+code span.cn { color: #8f5902; } 
+code span.co { color: #5e5e5e; } 
+code span.cv { color: #5e5e5e; font-style: italic; } 
+code span.do { color: #5e5e5e; font-style: italic; } 
+code span.dt { color: #ad0000; } 
+code span.dv { color: #ad0000; } 
+code span.er { color: #ad0000; } 
+code span.ex { } 
+code span.fl { color: #ad0000; } 
+code span.fu { color: #4758ab; } 
+code span.im { } 
+code span.in { color: #5e5e5e; } 
+code span.kw { color: #00769e; } 
+code span.op { color: #5e5e5e; } 
+code span.ot { color: #00769e; } 
+code span.pp { color: #ad0000; } 
+code span.sc { color: #5e5e5e; } 
+code span.ss { color: #20794d; } 
+code span.st { color: #20794d; } 
+code span.va { color: #111111; } 
+code span.vs { color: #20794d; } 
+code span.wa { color: #5e5e5e; font-style: italic; } 
 </style>
 
 
   <!--radix_placeholder_meta_tags-->
-<title>Qrious: The beauty and applicability of algebraic types</title>
+<title>Qrious: Using fixedpoint combinators to implement recursion</title>
 
-<meta property="description" itemprop="description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
+<meta property="description" itemprop="description" content="Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn&#39;t actually implement recursion."/>
 
-<link rel="canonical" href="https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"/>
+<link rel="canonical" href="https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-02-24"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-02-24"/>
+<meta property="article:published" itemprop="datePublished" content="2022-08-26"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-08-26"/>
 <meta name="article:author" content="Rahul Chhabra"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Qrious: The beauty and applicability of algebraic types"/>
+<meta property="og:title" content="Qrious: Using fixedpoint combinators to implement recursion"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
-<meta property="og:url" content="https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"/>
+<meta property="og:description" content="Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn&#39;t actually implement recursion."/>
+<meta property="og:url" content="https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Qrious"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Qrious: The beauty and applicability of algebraic types"/>
-<meta property="twitter:description" content="In this article we explore the wide applicability of algebraic types and how to use them in daily life"/>
-<meta property="twitter:url" content="https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"/>
+<meta property="twitter:title" content="Qrious: Using fixedpoint combinators to implement recursion"/>
+<meta property="twitter:description" content="Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn&#39;t actually implement recursion."/>
+<meta property="twitter:url" content="https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Qrious: The beauty and applicability of algebraic types"/>
-<meta name="citation_fulltext_html_url" content="https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"/>
-<meta name="citation_online_date" content="2022/02/24"/>
-<meta name="citation_publication_date" content="2022/02/24"/>
+<meta name="citation_title" content="Qrious: Using fixedpoint combinators to implement recursion"/>
+<meta name="citation_fulltext_html_url" content="https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"/>
+<meta name="citation_online_date" content="2022/08/26"/>
+<meta name="citation_publication_date" content="2022/08/26"/>
 <meta name="citation_author" content="Rahul Chhabra"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","categories","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["The beauty and applicability of algebraic types"]},{"type":"character","attributes":{},"value":["computer science","mathematics"]},{"type":"character","attributes":{},"value":["In this article we explore the wide applicability of algebraic types and how to use them in daily life"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Rahul Chhabra"]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/"]}]}]},{"type":"character","attributes":{},"value":["2022-02-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Using fixedpoint combinators to implement recursion"]},{"type":"character","attributes":{},"value":["Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn't actually implement recursion."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Rahul Chhabra"]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/"]}]}]},{"type":"character","attributes":{},"value":["2022-08-26"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"]},{"type":"character","attributes":{},"value":["https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -3518,7 +3519,7 @@ distill-header .nav a {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"The beauty and applicability of algebraic types","description":"In this article we explore the wide applicability of algebraic types and how to use them in daily life","authors":[{"author":"Rahul Chhabra","authorURL":"https://rahulc29.github.io/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-24T00:00:00.000+05:30","citationText":"Chhabra, 2022"}
+{"title":"Using fixedpoint combinators to implement recursion","description":"Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn't actually implement recursion.","authors":[{"author":"Rahul Chhabra","authorURL":"https://rahulc29.github.io/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-26T00:00:00.000+05:30","citationText":"Chhabra, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -3541,21 +3542,16 @@ distill-header .nav a {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>The beauty and applicability of algebraic types</h1>
+<h1>Using fixedpoint combinators to implement recursion</h1>
 <!--radix_placeholder_categories-->
-<div class="dt-tags">
-  <a href="../../index.html#category:computer_science" class="dt-tag">computer science</a>
-  <a href="../../index.html#category:mathematics" class="dt-tag">mathematics</a>
-</div>
 <!--/radix_placeholder_categories-->
-<p><p>In this article we explore the wide applicability of algebraic
-types and how to use them in daily life</p></p>
+<p><p>Implementing recursion was a major challenge while writing my interpreter so I used the oldest trick in the book : I didn’t actually implement recursion.</p></p>
 </div>
 
 <div class="d-byline">
   Rahul Chhabra <a href="https://rahulc29.github.io/" class="uri">https://rahulc29.github.io/</a> 
   
-<br />2022-02-24
+<br />2022-08-26
 </div>
 
 <div class="d-article">
@@ -3563,267 +3559,219 @@ types and how to use them in daily life</p></p>
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#syntax-and-elementary-notions">Syntax and elementary
-notions</a></li>
-<li><a href="#linked-lists-as-algebraic-types">Linked Lists as algebraic
-types</a>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#a-cute-sounding-but-essentially-meaningless-quote" id="toc-a-cute-sounding-but-essentially-meaningless-quote">A cute sounding but essentially meaningless quote</a></li>
+<li><a href="#recursion-is-nameless" id="toc-recursion-is-nameless">Recursion is nameless</a></li>
+<li><a href="#recursion-as-an-equation" id="toc-recursion-as-an-equation">Recursion as an equation</a></li>
+<li><a href="#recursion-is-defined-recursively" id="toc-recursion-is-defined-recursively">Recursion is defined recursively</a></li>
+<li><a href="#recursive-functions-as-fixpoints" id="toc-recursive-functions-as-fixpoints">Recursive functions as fixpoints?</a></li>
+<li><a href="#finding-fixpoints---the-mathematics" id="toc-finding-fixpoints---the-mathematics">Finding fixpoints - the mathematics</a>
 <ul>
-<li><a href="#elementary-operations-on-algebraic-linked-lists">Elementary
-operations on algebraic linked lists</a>
+<li><a href="#technical-jargon" id="toc-technical-jargon">Technical Jargon</a></li>
+<li><a href="#a-monotone-sequence-of-approximations" id="toc-a-monotone-sequence-of-approximations">A monotone sequence of approximations</a></li>
+</ul></li>
+<li><a href="#finding-fixpoints---the-computer-science" id="toc-finding-fixpoints---the-computer-science">Finding fixpoints - the computer science</a>
 <ul>
-<li><a href="#list-sizes">List Sizes</a></li>
-<li><a href="#sum-and-product-of-an-algebraic-linked-list">Sum and
-product of an algebraic linked list</a></li>
+<li><a href="#currys-y-combinator" id="toc-currys-y-combinator">Curry’s Y Combinator</a></li>
+<li><a href="#actually-implementing-the-recursion-in-our-language" id="toc-actually-implementing-the-recursion-in-our-language">Actually implementing the recursion in our language</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#binary-search-trees-as-algebraic-types">Binary Search
-Trees as algebraic types</a></li>
+<li><a href="#conclusion" id="toc-conclusion">Conclusion</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>The notion of a <em>type</em> is particularly important in
-programming. A significant portion of online discourse regarding the
-merits and demerits of a given programming language comes down to if the
-language’s type system:</p>
+<p>One implementation of recursive procedures that is suggested by Friedmann’s <a href="https://eopl3.com/preface.html">Essentials of Programming Languages</a> involved many complications and did not reveal anything about the deeper mathematical structure at play. Besides, to be very honest, I thought the implementation was ugly. I had read about fixedpoint combinators before and knew that it was possible to implement recursion using them - so I did. Here I have documented my journey.</p>
+<h1 id="a-cute-sounding-but-essentially-meaningless-quote">A cute sounding but essentially meaningless quote</h1>
+<blockquote>
+<p><em>In order to understand unbounded recursion, one must understand unbounded recursion.</em></p>
+</blockquote>
+<h1 id="recursion-is-nameless">Recursion is nameless</h1>
+<p>The implementation of recursion in LETREC is whack at worst and whack at best.</p>
+<p>Here’s factorial, for example :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>((fix (<span class="kw">lambda</span> (self)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                (<span class="kw">lambda</span> (n)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                  (<span class="kw">if</span> (<span class="kw">zero?</span> n)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                      (<span class="op">*</span> n (self (<span class="op">-</span> n <span class="dv">1</span>))))))) <span class="dv">5</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">; reduces to 120 </span></span></code></pre></div>
+<p>For starters, LETREC allows recursive definitions without names. Secondly, what on earth is this <code>fix</code> form?
+Am I admitting to the fact that the way I’ve implemented recursion requires <code>fix</code>ing?
+Also, what is this <code>self</code>? How can a procedure take <em>itself</em> as it’s parameter? That makes no sense!</p>
+<h1 id="recursion-as-an-equation">Recursion as an equation</h1>
+<p>In order to justify my case of a very whacky implementation of recursion (the honest justification is laziness but using abstract mathematics makes it look otherwise)
+I will start with the classic example of a while loop.</p>
+<p>Let us say we have a programming language like follows :</p>
+<pre><code>bool-expr ::= true | false | bool and bool | bool or bool | not bool 
+int-expr ::= integer | int-expr + int-expr | int-expr * int-expr | int-expr - int-expr 
+expr ::= bool-expr | int-expr 
+assignment ::= variable &lt;- expr 
+command ::= skip | assignment | if bool-expr then command else command 
+                 | while bool-expr do command | command ; command </code></pre>
+<p>Basically integers, booleans, if-else, assignments and while loops and a <code>skip</code> command that skips over to the next operation. (think empty semicolon <code>;</code> in langauge like C++)</p>
+<p>Observe that <code>while</code> loops would, then, satisfy the following equation :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> B do C <span class="op">=</span> <span class="cf">if</span> B then { C <span class="op">;</span> <span class="cf">while</span> B do C }  </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="cf">else</span> skip </span></code></pre></div>
+<p>Parametrising over <code>B</code> (<code>B</code> ranges over <code>bool-expr</code>) and <code>C</code> (ranges over <code>command</code>) we get that the <code>while</code> form <span class="math inline">\(W_{B,C}\)</span> is of the form</p>
+<p><span class="math display">\[
+  W_{B,C} = \phi(W_{B,C})
+\]</span></p>
+<p>where <span class="math inline">\(\phi\)</span> takes any form <code>f</code> to the <code>if B then { C ; f } else skip</code> form.</p>
+<p>More formally, <code>while</code> is completely defined by the above equation and we say that <span class="math inline">\(W_{B,C}\)</span> is the <em>fixpoint</em> of <span class="math inline">\(\phi_{B,C}\)</span>. Such equations are called <em>fixpoint equations</em>.</p>
+<p>We have an entire field of mathematics dedicated to the study of fixpoints - domain theory. It should be no surprise that since recursion is <em>defined</em> mathematically using
+fixpoint equations; domain theory is a favourite subject of computer scientists.</p>
+<h1 id="recursion-is-defined-recursively">Recursion is defined recursively</h1>
+<p>Let us go to the definition of factorial in a classical programming language like Python :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fact(n):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>: </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>: </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">*</span> fact(n <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>Observe that in this definition is implicit the fact that for <code>fact(n)</code> to be well-defined we need a proof of termination of <code>fact(n - 1)</code>.
+It should also be evident that while not explicitly parametrised over some form of <code>self</code>, this definition still implicitly adds <code>fact</code> to the
+environment in which it is defined.</p>
+<p>Any implementation of a programming langauge is inevitably written in <em>some</em> langauge (the metalanguage) and practically every metalanguage will have
+recursion. This allows the implementor to exploit the recursion already present in the metalanguage to define the operational semantics of recursion
+in the object language.</p>
+<h1 id="recursive-functions-as-fixpoints">Recursive functions as fixpoints?</h1>
+<p>If any recursive definition can be written as a fixpoint equation and doing so allows us to talk about recursion without circular definitions -
+the natural question to ask is what about recursive functions? The ubiquitous form of recursion must also be described by this.</p>
+<p>In order to see the sort of equation that defines recursive functions, let us make a few things more explicit in our older factorial function :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fact(<span class="va">self</span>, n):  </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span> : </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> : </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">*</span> <span class="va">self</span>(<span class="va">self</span>, n <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>Observe that if <code>self</code> is only capable of computing the factorial of <span class="math inline">\(n - 1\)</span> that too is good enough - we can compute the factorial of <span class="math inline">\(n\)</span> through that.
+So what we have established is that given a function that can compute the factorial of <span class="math inline">\(n - 1\)</span> it is possible to construct a function that can compute the
+factorial of <span class="math inline">\(n\)</span>.</p>
+<p>This is starting to sound suspiciously similar to induction!</p>
+<p>We need a higher-order function - one that takes an approximation of factorial that can compute upto <span class="math inline">\(n!\)</span> and returns a new function
+that can compute <span class="math inline">\((n + 1)!\)</span>.</p>
+<p>This leads to a certain strategy - recursive functions must be fixpoints of <em>higher-order functions</em>.</p>
+<p>Let us try to actually write down such a function :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fact_combinator(approx, n): </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> base_case(<span class="bu">input</span>):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> inductive_case(<span class="bu">input</span>): </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">input</span> <span class="op">==</span> n :</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> n <span class="op">*</span> approx(n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> approx(<span class="bu">input</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>: </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> base_case </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> inductive_case </span></code></pre></div>
+<p>If given the <span class="math inline">\(n\)</span>th approximation to factorial, this function will return the <span class="math inline">\((n + 1)\)</span>th approximation.</p>
+<p>What about our <em>first ever approximation</em>? Since this procedure is never invoked we can put it as anything : even a function that doesn’t even terminate!
+Indeed, the “zeroth” approximation is chosen as the “empty function” - the one that doesn’t return for any input whatsoever :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> empty(n):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> empty(n)</span></code></pre></div>
+<p>Observe that using the first ever approximation is a very general trick that will work for <em>any fixpoint equation</em> rather than just the one for factorials!</p>
+<h1 id="finding-fixpoints---the-mathematics">Finding fixpoints - the mathematics</h1>
+<h2 id="technical-jargon">Technical Jargon</h2>
+<p>The only real theorem we need is that for any given bounded partial order, any monotone sequence converges to a certain limit that can be calculated using
+the join or the meet operation as appropriate.</p>
+<p>I’m going to be intentionally informal here and that probably sounded like Greek.</p>
+<p>A partial order is essentially a generalisation of the familiar <span class="math inline">\(\le\)</span> operator for abstract mathematical objects rather than just numbers.
+An important restriction is that for any two <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> it is not necessary that <span class="math inline">\(a \le b\)</span> or <span class="math inline">\(b \le a\)</span>.</p>
+<p>A good example is the <span class="math inline">\(|\)</span> “divides” operation on natural numbers. Every number is divisible by itself. If <span class="math inline">\(a\)</span> is divisible by <span class="math inline">\(b\)</span> and <span class="math inline">\(b\)</span> is divisible by
+<span class="math inline">\(c\)</span> then <span class="math inline">\(a\)</span> is divisible by <span class="math inline">\(c\)</span>. Note that for any two <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> it is not necessary that <span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span> or that <span class="math inline">\(b\)</span> divides <span class="math inline">\(a\)</span> - it might be the case
+that neither is true.</p>
+<p>Another good example from computer science is the topological ordering of a graph.</p>
+<p>What’s a <em>bounded</em> partial order? Essentially, whatever objects we are considering have a “maximum” and a “minimum” in the sense that <span class="math inline">\(\exists a. \forall b. a \le b\)</span> and <span class="math inline">\(\exists a. \forall b. b \le a\)</span>.</p>
+<p>Now, what’s a <em>monotone sequence</em>? Well any sequence <span class="math inline">\(a_{n}\)</span> (finite or infinite) such that either <span class="math inline">\(a_{i} \le a_{i + 1}\)</span> or <span class="math inline">\(a_{i + 1} \le a_{i}\)</span>.</p>
+<p>What we’re saying is that <em>any</em> such sequence always <em>converges</em>. Of course, I have not actually defined convergence. One way of thinking about it is
+that there is one <em>unique</em> element that to which the elements in our sequence appear to get closer to.
+For reasons of brevity I will not go too much into the discussion about convergence and instead state the result and we’ll accept it as an axiom.
+Also, since we will only be talking a particular kind of partial order - the partial order of subsets of a set, I will only talk about that.</p>
+<p>Observe that given two subsets of some set <span class="math inline">\(U\)</span>, say <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the relation <span class="math inline">\(\subseteq\)</span> is a partial order!</p>
+<p>Also, the empty set <span class="math inline">\({}\)</span> is the subset of any subset of <span class="math inline">\(U\)</span> and the subset <span class="math inline">\(U\)</span> is the superset of any subset of <span class="math inline">\(U\)</span>.
+It is not <em>just</em> a partial order - it is a <em>bounded partial order</em>!</p>
+<p>Now we will state the theorems in their entire glory.</p>
+<p>Assume that <span class="math inline">\(F_{n}\)</span> is a monotone sequence of subsets of some universe <span class="math inline">\(U\)</span>. Specifically, <span class="math inline">\(F_{n} \le F_{n + 1}\)</span>.</p>
+<p>Then we define the <em>limit</em> of this sequence as the countable union of it’s elements :</p>
+<p><span class="math display">\[
+  \lim_{n \to \infty} F_{n} = \bigcup_{i = 1}^{\infty} F_{i}
+\]</span></p>
+<p>This will suffice for our purposes.</p>
+<h2 id="a-monotone-sequence-of-approximations">A monotone sequence of approximations</h2>
+<p>Remember our old sequence of approximations of the factorial function?</p>
+<p>This sequence starts with the empty function and we have a combinator <span class="math inline">\(\mathbb{F}\)</span> that can take the <span class="math inline">\(n\)</span>th approximation and return the <span class="math inline">\((n + 1)\)</span>th approximation (<span class="math inline">\(\mathbb{F}(F_{n}) = F_{n + 1}\)</span>).</p>
+<p>One way to model these approximations is as <em>partial functions</em>. Conventional functions have an output defined for <em>any</em> input but partial functions have an output defined
+for <em>some</em> inputs. Our approximation <span class="math inline">\(F_{n}\)</span> can really only produce outputs for inputs upto <span class="math inline">\(n\)</span>.</p>
+<p>Sparing some details, this means that <span class="math inline">\(F_{n}\)</span> is a function defined for a subset of the natural numbers (<span class="math inline">\({0 \dots n}\)</span>) and the base case is defined for the empty set.
+Also, since functions themselves are sets (of input-output pairs) we can ask whether two functions’ domains are subsets of each other or not. This means that our approximations form
+the good-old partial ordering we defined in the last section.</p>
+<p>The function with the empty set as the domain acts as the lower bound and any function with the entire universe (in our case <span class="math inline">\(\mathbb{N}\)</span>) is the upper bound.
+So this partial order is also bounded! It is also a subset partial order so our old form applies too!</p>
+<p>I will not prove it but the solution to our recursive equation, our fixpoint to the combinator defined earlier is <em>exactly</em> the limit of this sequence. But
+this limit is guranteed to exist since the sequence is guranteed to converge!</p>
+<p>So the factorial function, a function that computes the factorial of any given natural number is precisely defined by the following operation :</p>
+<p><span class="math display">\[
+  F = \lim_{n \to \infty} F_{n} = \bigcup_{i = 1}^{\infty} F_{i}
+\]</span></p>
+<p>Wow, all this just to <em>define</em> mathematically recursion without actually using recursion. This might look unnecessarily complex (it is) but it’s still
+important since this gives a totally new perspective on what recursion is rather than just “stack go brr”.</p>
+<h1 id="finding-fixpoints---the-computer-science">Finding fixpoints - the computer science</h1>
+<p>During the last section we dived into what some might call “heavy mathematics”. It might be difficult to relate it back to CS.</p>
+<p>Our first question is - does the fixpoint <em>always</em> exist? Does any arbitrary recursive definition produce a valid term? (spoiler alert : yes).
+Secondly, if the fixpoint does exist, can we write a computer program to actually <em>compute it</em>? (spoiler alert : yes).</p>
+<h2 id="currys-y-combinator">Curry’s Y Combinator</h2>
+<p><em>This section assumes some basic knowledge about the untyped lambda calculus</em>.</p>
+<p>We define the (in)famous Y combinator as follows :</p>
+<p><span class="math display">\[
+  Y = \lambda f. ((\lambda x. f (x x)) (\lambda x. f (x x)))
+\]</span></p>
+<p>The Y combinator is the most popular of a family <em>fixpoint combinators</em>. A combinator is a lambda term with no free variables. Observe that
+our definition indeed does not contain any free variables. The Y combinator has the property that <span class="math inline">\(Y f = f (Y f)\)</span> for any term <span class="math inline">\(f\)</span>.
+This means that the Y combinator takes any lambda abstraction and returns it’s fixpoint.</p>
+<p>Of course, we have not considered other important questions - is the fixpoint unique? If the fixpoint is not unique, then which fixpoint is returned by the
+Y combinator? I’ll leave all this for now.</p>
+<p>Let us take an example : let’s compute the fixpoint of the identity function. The term <span class="math inline">\(\lambda y.y\)</span> will represent the identity function.</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+  Y id \\
+  = Y \lambda y. y  \\
+  = \lambda f. ((\lambda x. f (x x)) (\lambda x. f (x x))) \lambda y.y \\
+  = ((\lambda x. (\lambda y. y (x x))) (\lambda x. (\lambda y. y (x x)))) \\
+  = ((\lambda x. (x x)) (\lambda x. (x x))) \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Observe that the last term is the classic example of a non-terminating infinite loop.</p>
+<p>This makes sense, we only expected that the Y combinator will produce a well-formed term for any recursive definition; we cannot gurantee that
+this well-formed term be terminating.</p>
+<h2 id="actually-implementing-the-recursion-in-our-language">Actually implementing the recursion in our language</h2>
+<p>One might argue that actually computing the fixpoint for a recursive function this way seems to be a bad idea. In this argument, they would be correct.
+Actually computing fixpoints would be slow and inefficient. A better idea is to simply use the recursion present in the metalanguage.</p>
+<p>I have taken the <em>call-by-value</em> flavour of the Y-combinator. Scheme has call-by-value semantics and the<br />
+object language has inherited these semantics.</p>
+<p>The call-by-value Y-combinator is defined as follows :</p>
+<p><span class="math display">\[
+  Y = \lambda f. ((\lambda x. f (\lambda y. (x x) y)) (\lambda x. f (\lambda y. (x x) y)))
+\]</span></p>
+<p>In the interpreter this is defined as a primitive by evaluating a simple parse tree in the empty environment :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> y-combinator</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    (value-of (parse-tree &#39;(<span class="kw">lambda</span> (f)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                             ((<span class="kw">lambda</span> (x)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                (f (<span class="kw">lambda</span> (y)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                                     ((x x) y))))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                              (<span class="kw">lambda</span> (x)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                (f (<span class="kw">lambda</span> (y)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                                     ((x x) y)))))))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>              (empty-env)))</span></code></pre></div>
+<p>This means that fixpoints of recursive functions is computed with the Y combinator.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>I know very well that I’ll have to implement proper fixpoint handling and proper recursion handling since algebraic datatypes require so. Nonetheless, this works
+well enough for now and I can add a new <code>defrec</code> form as syntactic sugar that reduces to the <code>fix</code> form.</p>
+<p>I have also been very informal and non-rigourous with the mathematics. I will be fixing both of these very soon.</p>
+<p>One might argue that putting in so much mathematics and extra garbage in this design doc is unnecessary - but this fundamentally misunderstands the philosophy.
+Since the design is motivated entirely by personal laziness, the design doc itself is essentially a glorified shitpost.</p>
+<h1 id="references">References</h1>
 <ul>
-<li>Python is <em>dynamic</em> and <em>strong</em></li>
-<li>JavaScript is <em>dynamic</em> and <em>weak</em> (<code>3 ==
-&quot;3&quot;</code> but <code>3 !== &quot;3&quot;</code>)</li>
-<li>C is <em>static</em> and <em>weak</em></li>
-<li>C++ and Java are <em>static</em> and <em>strong</em></li>
-<li>Kotlin, Rust and Haskell are <em>static</em> and <em>very
-strong</em></li>
+<li>For understanding about the untyped lambda calculus, one may see <em>Type Theory and Formal Proof</em> or <em>Lectures on the Curry-Howard Isomorphism</em></li>
+<li>For understanding about general recursion and algebraic datatypes see Pierce’s <em>Types and Programming Languages</em></li>
+<li>For understanding the mathematics behind recursion see any book on domain theory or programming language semantics.</li>
 </ul>
-<p>Of all the programming languages aforementioned, only the last three
-contain a rather powerful means of creating and composing types known as
-<em>algebraic types</em>. It would be unfair to not mention the fact
-that <a href="https://openjdk.java.net/jeps/409">Java</a> and <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1371r1.pdf">C++</a>
-are both proposing to add algebraic types to their type systems.</p>
-<h1 id="syntax-and-elementary-notions">Syntax and elementary
-notions</h1>
-<p>At a very fundamental level, the notion of doing “algebra” with types
-comes down to the following two operations :</p>
-<ol type="1">
-<li><strong>Disjoint Union</strong> : the union of two disjoint types
-ensures that if we are given any instance of that type, we know it’s
-“parent type”</li>
-<li><strong>Cartesian Product</strong> : the Cartesian Product of types
-<code>A</code> and <code>B</code> is the <em>tuple</em> <code>(A,
-B)</code></li>
-</ol>
-<p>Most programming languages explicitly or implicitly contain the
-notion of the Cartesian product.</p>
-<p>This is all very abstract, so let’s try to make something using only
-these operations : a linked list!</p>
-<h1 id="linked-lists-as-algebraic-types">Linked Lists as algebraic
-types</h1>
-<p>Consider the following (singly) linked list :</p>
-<pre><code>1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5</code></pre>
-<p>Observe that any node can be thought of as containing
-<em>another</em> linked list inside it, as in :</p>
-<pre><code>1 -&gt; (2 -&gt; (3 -&gt; (4 -&gt; 5))</code></pre>
-<p>What about the <code>5</code> though?</p>
-<p>Let us play mathematician and <em>assume</em> that the node
-containing <code>5</code> contains the <em>empty list</em> inside
-it.</p>
-<p>Is this legal?</p>
-<p>Well, we make the rules around here! 🤫</p>
-<p>So our original list now becomes :</p>
-<pre><code>1 -&gt; (2 -&gt; (3 -&gt; (4 -&gt; (5 -&gt; []))))</code></pre>
-<p>where <code>[]</code> represents the empty list.</p>
-<p>What is the point of doing that however?</p>
-<p>We can now make the following claim, <em>any</em> linked list can be
-either of two things :</p>
-<ol type="1">
-<li><strong>Empty</strong> : if the list is empty, it is
-<code>[]</code></li>
-<li><strong>Node</strong> : a node will have a value (an
-<code>int</code> in this example), and another list, this other list
-itself follows these same constraints obviously</li>
-</ol>
-<p>I’d like to know throw some terminology : the type of
-<code>LinkedList</code> may be defined as the <em>disjoint union</em> of
-the <code>EmptyList</code> type and the <code>ListNode</code> type.</p>
-<p>Make another observation : the <code>ListNode</code> itself is the
-<em>Cartesian product</em> of <code>int</code> and the
-<code>LinkedList</code> type.</p>
-<p>Let us write this down in code, shall we?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> LinkedList = Empty | Node <span class="kw">of</span> <span class="op">(</span><span class="dt">int</span> * LinkedList<span class="op">)</span></span></code></pre></div>
-<p>Let’s break this down : a <code>LinkedList</code> is either an
-<code>Empty</code> instance, in which case it holds no further
-information (this definition automatically implies that there is
-<em>only</em> one empty list) or it is a <code>Node</code> consisting of
-the Cartesian product of <code>int</code> and
-<code>LinkedList</code></p>
-<p>Now that we have a linked list, let us try to do things with it!</p>
-<h2 id="elementary-operations-on-algebraic-linked-lists">Elementary
-operations on algebraic linked lists</h2>
-<h3 id="list-sizes">List Sizes</h3>
-<p>The first problem we will tackle is to compute the length of our
-linked list. With out algebraic defintion, this is practically a
-joke:</p>
-<ol type="1">
-<li><strong>Empty</strong> : define the size to be <code>0</code></li>
-<li><strong>Node</strong> : define the size to be <code>1</code> added
-to the size of the contained list</li>
-</ol>
-<p>Let us write this down in code :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> size list = </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">0</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; <span class="dv">1</span> + size<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
-<p>The <code>match</code> and <code>with</code> is special syntax used
-for dealing with algebraic types called <em>pattern matching</em>. Every
-language that provides algebraic types also provides some variant of
-pattern matching.</p>
-<p>As an example, let us take our old example and dry run it.</p>
-<p>We have the list :</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> a = <span class="dv">1</span> -&gt; <span class="op">(</span><span class="dv">2</span> -&gt; <span class="op">(</span><span class="dv">3</span> -&gt; <span class="op">(</span><span class="dv">4</span> -&gt; <span class="op">(</span><span class="dv">5</span> -&gt; <span class="op">[]))))</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> b = a.tail //<span class="co"> (2 -&gt; (3 -&gt; (4 -&gt; (5 -&gt; []))))</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> c = b.tail //<span class="co"> (3 -&gt; (4 -&gt; (5 -&gt; [])))</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d = c.tail //<span class="co"> (4 -&gt; (5 -&gt; []))</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> e = d.tail //<span class="co"> (5 -&gt; [])</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f = e.tail //<span class="co"> []</span></span></code></pre></div>
-<p>We have to compute <code>size(a)</code></p>
-<p>The execution would look something like this :</p>
-<pre><code>size(a)
-= 1 + size(b)
-= 1 + 1 + size(c)
-= 1 + 1 + 1 + size(d)
-= 1 + 1 + 1 + 1 + size(e)
-= 1 + 1 + 1 + 1 + 1 + size(f)
-= 1 + 1 + 1 + 1 + 1 + 0 
-= 5</code></pre>
-<p>Note that this algorithm takes stack space that is <em>linear</em>
-with the size of the list.</p>
-<p>Here’s an alternative implementation :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> size list = </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    //<span class="co"> local function</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> iter list result = </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        | Empty -&gt; result </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; iter<span class="op">(</span>containedList, result + <span class="dv">1</span><span class="op">)</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    iter<span class="op">(</span>list, <span class="dv">0</span><span class="op">)</span></span></code></pre></div>
-<p>The stack space of this algorithm is constant with the size of the
-list.</p>
-<p>Here’s a challenge for you : can you implement this algorithm in C++
-without using recursion but while loops instead? (a close approximation
-to this can be achieved by using an <code>enum class</code> and
-performing <code>switch case</code>)</p>
-<h3 id="sum-and-product-of-an-algebraic-linked-list">Sum and product of
-an algebraic linked list</h3>
-<p>Let us compute the <em>sum</em> of an algebraic linked list.</p>
-<p>I urge you to come up with a solution yourself first!</p>
-<p>Here’s one way to do it :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> sum list = </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">0</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; value + sum<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
-<p>Beauty lies in the eyes of the beholder, but you need an eye checkup
-if you don’t consider this beautiful!</p>
-<p>Very similarly, we can compute the product of a list :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> product list = </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; <span class="dv">1</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">(* this might not make much sense; </span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    but is actually the same thing as saying that the sum of the empty list is 0 *)</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; value * product<span class="op">(</span>containedList<span class="op">)</span></span></code></pre></div>
-<p>The two codes are awfully similar, let us generalise :</p>
-<ol type="1">
-<li>we need an <em>identity</em> to associate with the empty list</li>
-<li>we need an <em>operation</em> to associate the value from the
-computation to our node’s value</li>
-</ol>
-<p>Let us write a general procedure that achieves this :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> reduce list operation identity = </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; identity </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; operation<span class="op">(</span>value, containedList<span class="op">)</span></span></code></pre></div>
-<p>This is nice and all but a function with three arguments of which two
-clearly share a semantic relationship is extremely ugly!</p>
-<p>How do we fix this?</p>
-<p>The Cartesian product!</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> BinaryOperation =  <span class="dt">int</span> * <span class="op">(</span><span class="dt">int</span> -&gt; <span class="dt">int</span> -&gt; <span class="dt">int</span><span class="op">)</span></span></code></pre></div>
-<p>The <code>int -&gt; int -&gt; int</code> syntax is used to denote a
-function that takes two <code>int</code>s and returns an
-<code>int</code>.</p>
-<p>If you are curious about the origin of such a syntax : look up the
-concept of <em>currying</em>, you will probably enjoy it!</p>
-<p>This is still not particularly descriptive : the type does not talk
-about what the <code>int</code> and <code>int -&gt; int -&gt; int</code>
-are <em>for</em>.</p>
-<p>To mitigate that, we can give them names :</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> BinaryOperation = </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span> Identity: <span class="dt">int</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      Operation: <span class="dt">int</span> -&gt; <span class="dt">int</span> -&gt; <span class="dt">int</span> <span class="op">}</span></span></code></pre></div>
-<p>This might look like <code>struct</code>s from other languages such
-as C/C++ or Rust.</p>
-<p>It acts very similar to a <code>struct</code> and is called a
-<em>record</em>.</p>
-<p>The only place in which records differ from <code>struct</code>s is
-that records can be natively recursive while <code>struct</code>s can be
-<em>implemented</em> recursively using some kind of pointers.</p>
-<p>I say “some kind of” because both C++ and Rust allow for very exotic
-kinds of pointers that would all work; think
-<code>std::unique_ptr&lt;T&gt;</code>,
-<code>std::shared_ptr&lt;T&gt;</code>,
-<code>std::weak_ptr&lt;T&gt;</code>.</p>
-<p>In Rust, one has even more control : for example, with
-<code>Box&lt;T&gt;</code> one can <em>enforce</em> that <code>T</code>
-be on the heap. No such analog exists in C++.</p>
-<p>I digress, let us reimplement our <code>reduce</code> function!</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">rec</span> reduce list op = </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    | Empty -&gt; op.Identity</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; op.Operation<span class="op">(</span>value, reduce<span class="op">(</span>containedList, op<span class="op">))</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> Addition = BinaryOperation <span class="op">{</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    Identity : <span class="dv">0</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    Operation : <span class="kw">fun</span> a b -&gt; <span class="op">(</span>a + b<span class="op">)</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> Multiplication = BinaryOperation <span class="op">{</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    Identity : <span class="dv">1</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    Operation : <span class="kw">fun</span> a b -&gt; <span class="op">(</span>a * b<span class="op">)</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> sum list = reduce<span class="op">(</span>list, Addition<span class="op">)</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> product list = reduce<span class="op">(</span>list, Multiplication<span class="op">)</span></span></code></pre></div>
-<p>This is still not <code>reduce</code>s final form.</p>
-<p>Observe that the stack space grows linearly with list size.</p>
-<p>Here’s a mitigation</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> reduce list op = </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">rec</span> iter list result = </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">match</span> list <span class="kw">with</span> </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        | Empty -&gt; result </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        | Node<span class="op">(</span>value, containedList<span class="op">)</span> -&gt; iter<span class="op">(</span>containedList, op.Operation<span class="op">(</span>value, result<span class="op">))</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    iter<span class="op">(</span>list, op.Identity<span class="op">)</span></span></code></pre></div>
-<p>I’d like to ask for your patience once again : we do not
-<em>need</em> the list to be defined only for <code>int</code>s.</p>
-<p>Our <code>reduce</code> function should also work for, say, string
-concetation (<code>&quot;&quot;</code> acts as the identity).</p>
-<p>The changes in our type definitions are trivial :</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode fsharp"><code class="sourceCode fsharp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> LinkedList&lt;&#39;a&gt; = Empty | Node <span class="kw">of</span> <span class="op">(</span>&#39;a * LinkedList&lt;&#39;a&gt;<span class="op">)</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> BinaryOperation&lt;&#39;a&gt; = </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span> Identity : &#39;a,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      Operation : &#39;a -&gt; &#39;a -&gt; &#39;a <span class="op">}</span></span></code></pre></div>
-<p>A lot has happened here : let us break it down.</p>
-<p>The <code>&#39;a</code> is called a <em>type parameter</em>. We can put
-<code>&#39;a = int</code> to re-obtain the list we have been studying till
-now, <code>int</code> is then called a <em>type argument</em>.</p>
-<p>Essentially, we have generalised our list to accomadate more than one
-type.</p>
-<p>In the lingo, we say that the type <code>LinkedList&lt;&#39;a&gt;</code>
-is <em>polymorphic</em> over all <code>&#39;a</code>, and that
-<code>LinkedList&lt;int&gt;</code> is a <em>monomorphisation</em> for
-<code>&#39;a = int</code>.</p>
-<p>A little bit of trivia : an operation for which an identity,
-associativity (<code>a * b * c</code> is always unambigous) and it is
-guranteed that <code>a * b</code> is always of the same type as
-<code>a</code> and <code>b</code> is called a <em>monoidal</em>
-operation.</p>
-<h1 id="binary-search-trees-as-algebraic-types">Binary Search Trees as
-algebraic types</h1>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -3831,6 +3779,15 @@ algebraic types</h1>
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
@@ -3840,12 +3797,12 @@ algebraic types</h1>
   <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/rahulc29/rahulc29.github.io/issues/new">create an issue</a> on the source repository.</p>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Chhabra (2022, Feb. 24). Qrious: The beauty and applicability of algebraic types. Retrieved from https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/</pre>
+  <pre class="citation-appendix short">Chhabra (2022, Aug. 26). Qrious: Using fixedpoint combinators to implement recursion. Retrieved from https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{chhabra2022the,
+  <pre class="citation-appendix long">@misc{chhabra2022using,
   author = {Chhabra, Rahul},
-  title = {Qrious: The beauty and applicability of algebraic types},
-  url = {https://rahulc29.github.io/posts/2022-02-24-the-beauty-and-applicability-of-algebraic-types/},
+  title = {Qrious: Using fixedpoint combinators to implement recursion},
+  url = {https://rahulc29.github.io/posts/2023-07-10-using-fixedpoint-combinators-to-implement-recursion/},
   year = {2022}
 }</pre>
 </div>
