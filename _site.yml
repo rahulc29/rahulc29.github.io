@@ -9,6 +9,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Resume"
+      href: resume.pdf
 output: distill::distill_article
 base_url: https://rahulc29.github.io/
 repository_url: https://github.com/rahulc29/rahulc29.github.io/
