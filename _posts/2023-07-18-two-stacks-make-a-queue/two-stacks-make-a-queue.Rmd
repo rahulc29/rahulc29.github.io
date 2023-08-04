@@ -1,0 +1,23 @@
+---
+title: "Two stacks make a queue."
+description: |
+  A short description of the post.
+author:
+  - name: Rahul Chhabra
+    url: https://rahulc29.github.io/
+date: 2023-07-18
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
