@@ -2,6 +2,7 @@
 title: "About this blog"
 description: |
   This is my personal blog where I write about anything that interests me!
+author: "Rahul Chhabra"
 ---
 # Hi there 👋
 

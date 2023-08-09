@@ -8,7 +8,8 @@ author:
 date: 2023-07-18
 output:
   distill::distill_article:
-    self_contained: false
+    toc: true
+    self_contained: true
 ---
 
 # Ceremonial imports :
